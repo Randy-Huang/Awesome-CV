@@ -548,7 +548,7 @@
 % Define a paragraph for CV
 \newenvironment{cvparagraph}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
+  \vspace{-4mm}
   \paragraphstyle
 }{%
   \par
@@ -574,6 +574,20 @@
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+  \end{tabular*}%
+}
+% Define an entry of cv information only a description
+% Usage: \cvsingleentry{<description>}
+\newcommand*{\cvsingleentry}[1]{%
+  \vspace{-4.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+%    \ifempty{#2#3}
+%      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+%      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+%      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#1}}
   \end{tabular*}%
 }
 
@@ -613,6 +627,7 @@
     \end{tabular*}
   \end{center}
 }
+
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
 \newcommand*{\cvhonor}[4]{%
