@@ -23,7 +23,8 @@
 \usepackage{datenumber,fp}
 
 % Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+% \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\geometry{left=1.4cm, top=.75cm, right=1.4cm, bottom=1.1cm, footskip=.5cm}
 
 % Specify the location of the included fonts
 \fontdir[fonts/]
@@ -31,7 +32,9 @@
 % Color for highlights
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
 %                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-red}
+% \colorlet{awesome}{awesome-red}
+\definecolor{googleblue}{HTML}{4285F4}
+\colorlet{awesome}{googleblue}
 % Uncomment if you would like to specify your own color
 % \definecolor{awesome}{HTML}{CA63A8}
 
@@ -56,15 +59,16 @@
 % Available options: circle|rectangle,edge/noedge,left/right
 % \photo[rectangle,edge,right]{./examples/profile}
 \name{Kai-Hung}{Huang}
-\position{Sr. Software Engineer at Xperi (DTS){\enskip\cdotp\enskip}Android Expert}
-%\address{3F., No. 3, Ln. 180, Sec. 1, Zhongshan N. Rd., Tamsui Dist., New Taipei City 251017, TAIWAN}
-\address{5F., No. 65, Ln. 182, Beixin Rd., Tamsui Dist., New Taipei City 251608, Taiwan}
-
+% \position{Sr. Software Engineer at Xperi (DTS){\enskip\cdotp\enskip}Android Expert}
+\position{Senior Software Engineer \enskip\cdotp\enskip Android Platform & Embedded Systems}
+% \address{3F., No. 3, Ln. 180, Sec. 1, Zhongshan N. Rd., Tamsui Dist., New Taipei City 251017, TAIWAN}
+% \address{5F., No. 65, Ln. 182, Beixin Rd., Tamsui Dist., New Taipei City 251608, Taiwan}
+% \address{7F., No. 262-5, Sec. 1, Xinshi 1st Rd., Tamsui Dist., New Taipei City 251652, Taiwan}
+\address{Taipei, Taiwan}
 \mobile{(+886) 0925-133902}
 \email{randy.hunang@gmail.com}
-%\homepage{www.posquit0.com}
-\github{www.github.com/Randy-Huang}
-\linkedin{www.linkedin.com/in/kai-hung-huang-344117106/}
+% \github{Randy-Huang}
+\linkedin{kai-hung-huang-344117106}
 % \gitlab{gitlab-id}
 % \stackoverflow{SO-id}{SO-name}
 % \twitter{@twit}
@@ -74,6 +78,9 @@
 
 % \quote{``Be the change that you want to see in the world."}
 
+\makeatletter
+\renewcommand*{\skilltypestyle}[1]{{\fontsize{9.5pt}{1em}\bodyfont\mdseries\color{darktext} #1}}
+\makeatother
 
 %-------------------------------------------------------------------------------
 \begin{document}
@@ -84,10 +91,12 @@
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
-\makecvfooter
-  {\today}
-  {Kai-Hung Huang~~~·~~~Résumé}
-  {\thepage}
+% \makecvfooter
+%  {\today}
+%  {Kai-Hung Huang~~~·~~~Résumé}
+%  {\thepage}
+\makecvfooter{}{Kai-Hung Huang \enskip\cdotp\enskip R\'esum\'e}{\thepage}
+
 
 
 %-------------------------------------------------------------------------------
@@ -95,6 +104,7 @@
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
 \input{resume/summary.tex}
+\input{resume/skills.tex}
 \input{resume/experience.tex}
 %\input{resume/honors.tex}
 % \input{resume/presentation.tex}
